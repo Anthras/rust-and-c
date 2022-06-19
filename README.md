@@ -3,6 +3,9 @@ A very short demo of how to use Rust code as a static library for C projects
 
 ## Quick Demo
 
+### Create Rust project
+Assuming Rust is installed, create a new cargo library folder
+
 ### Cargo.toml
 Add to Cargo.toml the follow to make sure when building the cargo project to produce a static library with the name libtoddrustlibrary.a
 
@@ -38,7 +41,8 @@ Include the header file in your C file and use as if it were native C code
 ```
 
 ### Makefile
-The Makefile builds the libtoddrustlibrary.a static library and links it using `gcc`
+The Makefile builds the libtoddrustlibrary.a static library and links it using `gcc`. The flags -L and -l take their arguments without spaces afterwards. -L is for the directory of the static library and -l is the name of the static library without the lib- previx or the -.a suffix.
+
 ```makefile
 all: test.c
 	cargo build --release && gcc test.c -L./target/release -ltoddrustlibrary -o test
