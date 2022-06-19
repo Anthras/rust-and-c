@@ -1,0 +1,13 @@
+[package]
+name = "toddrustlibrary"
+version = "0.1.0"
+edition = "2021"
+author = "Todd Weaver"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "toddrustlibrary"
+crate-type = ["staticlib"]
+
+[dependencies]
